@@ -1,0 +1,84 @@
+-Pn (formerly –PN)
+Don’t Ping
+-sn (formerly -sP)
+Perform a Ping Only Scan
+-PS
+TCP SYN Ping
+-PA
+TCP ACK Ping
+-PU
+UDP Ping
+-PE
+ICMP Echo Ping
+-PP
+ICMP Timestamp Ping
+-PM
+ICMP Address Mask Ping
+-PO
+IP Protocol Ping
+-PR
+ARP Ping
+--traceroute
+Traceroute
+-n
+Disable Reverse DNS Resolution
+--system-dns
+Alternative DNS Lookup
+--dns-servers
+Manually Specify DNS Server(s)
+-sL
+
+
+for blocking ping 
+
+nmap -Pn {ip address}
+
+The -PS option performs a TCP SYN ping.
+
+The -PA performs a TCP ACK ping on the specified target.
+
+The default port for -PA is 80, but others can be specified using the
+following syntax: nmap -PA22,25,80,443,etc.
+
+The -PU option performs a UDP ping on the target system.
+
+The -PE option performs an ICMP (Internet Control Message Protocol)
+echo ping on the specified system.
+
+The -PP option performs an ICMP timestamp ping.
+
+The -PM option performs an ICMP address mask ping.
+
+The -PO option performs an IP protocol ping.
+
+If no protocols are specified, the default protocols 1 (ICMP), 2 (IGMP), and 4
+(IP) are used
+
+Note: A complete list of Internet Protocol numbers can be found online at
+iana.org/assignments/protocol-numbers.
+
+The -PR option instructs Nmap to perform an ARP (Address Resolution
+Protocol) ping on the specified target.
+
+the other discovery options on a LAN you must use the --disable-arp-ping
+option.
+
+The --traceroute parameter can be used to trace the network path to the
+specified host.
+
+The -n parameter is used to disable reverse DNS lookups.
+
+The --system-dns option instructs Nmap to use the host system’s DNS
+resolver instead of its own internal method.
+
+The --dns-servers option is used to manually specify DNS servers to be
+queried when scanning.
+
+The -sL option performs a reverse DNS lookup of the specified IP
+addresses.
+
+$ nmap -sL 8.8.4.4 8.8.8.8 74.207.244.221
+
+we are starting from section 4
+
+
